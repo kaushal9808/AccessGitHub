@@ -24,12 +24,13 @@ public class GitHubAccessResource {
 	
 	@GetMapping("/{username}")
 	public ResponseEntity getUserRepository(@PathVariable("username") String username ){
-		return githubRepository.getuserRepository(username);
+		return githubRepository.getUserProject(username);
 	}
 	
-	 
-	
-	
+	@GetMapping("/{username}/{projectId}")
+	public ResponseEntity getUserRepository(@PathVariable("username") String username, @PathVariable("projectId") String projectId ){
+		return githubRepository.getProject(username, projectId);
+	}
 	
 	
 
